@@ -13,8 +13,7 @@ abstract class BaseFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var contentView = inflater.inflate(getFragmentLayoutId(), container, false)
-        return contentView
+        return inflater.inflate(getFragmentLayoutId(), container, false)
     }
 
     abstract fun getFragmentLayoutId():Int
@@ -22,7 +21,10 @@ abstract class BaseFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView(view)
+        initData()
     }
 
-    fun initView(view: View){}
+    abstract fun initData()
+
+    abstract fun initView(view: View)
 }

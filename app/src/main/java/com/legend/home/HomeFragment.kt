@@ -1,6 +1,7 @@
 package com.legend.home
 
 import android.util.Log
+import android.view.View
 import com.legend.R
 import com.legend.base.BaseData
 import com.legend.base.BaseFragment
@@ -18,6 +19,13 @@ class HomeFragment: BaseFragment() {
     }
     override fun getFragmentLayoutId(): Int {
         return R.layout.fragment_home
+    }
+
+    override fun initData() {
+
+    }
+
+    override fun initView(view: View) {
     }
 
 
