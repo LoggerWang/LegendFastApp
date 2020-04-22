@@ -1,6 +1,8 @@
 package com.legend
 
 import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
 import com.legend.home.HomeFragment
@@ -17,8 +19,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//        setStatusBar()
+
         initFragments()
         addListeners()
+    }
+
+    private fun setStatusBar() {
+        val statusBarHeight = getStatusBarHeight(resources)
+        val layoutParams =
+            LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+        layoutParams.topMargin = statusBarHeight
+        fm_container.layoutParams = layoutParams
     }
 
     private fun initFragments() {
