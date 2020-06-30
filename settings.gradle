@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name='LegendFastApp'
+include ':testlib'
+include 'refresh_and_loadmore_library'

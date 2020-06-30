@@ -3,14 +3,21 @@ package com.legend.home
 import android.util.Log
 import android.view.View
 import com.legend.R
+import com.legend.api.ArticleService
+import com.legend.api.BaseResponse
+import com.legend.api.MyRetrofitClient
 import com.legend.base.BaseData
 import com.legend.base.BaseFragment
+import com.legend.entity.ArticleBean
+import com.legend.entity.BaseDataBean
 import com.legend.entity.WangYiNewsEntity
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Type
 import java.util.*
 
 class HomeFragment: BaseFragment() {
@@ -22,6 +29,21 @@ class HomeFragment: BaseFragment() {
     }
 
     override fun initData() {
+         MyRetrofitClient.instance.getInstance(ArticleService::class.java).getArticleList()
+             .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : BaseResponse<ArticleBean>(){
+                override fun onSuccess(data: ArticleBean?) {
+                    println("======="+data.toString())
+                    setArticleData(data)
+                }
+
+                override fun onFail(msg: String?) {
+                }
+            })
+    }
+
+    private fun setArticleData(data: ArticleBean?) {
 
     }
 
@@ -33,6 +55,7 @@ class HomeFragment: BaseFragment() {
         var retrofit = Retrofit.Builder()
             .baseUrl("https://api.apiopen.top/")
             .addConverterFactory(GsonConverterFactory.create())
+
             .build()
 
         var apiService = retrofit.create(HomeApiService::class.java)
