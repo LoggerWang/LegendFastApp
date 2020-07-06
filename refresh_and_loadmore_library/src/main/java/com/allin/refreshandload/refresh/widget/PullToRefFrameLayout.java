@@ -11,7 +11,7 @@ import com.allin.refreshandload.refresh.FixPrtFrameLayout;
  * Description:下拉刷新控件
  * 使用方法:使用该控件包裹需要下拉的子控件,可以是任意view
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/3 16:47
  */
 public class PullToRefFrameLayout extends FixPrtFrameLayout {

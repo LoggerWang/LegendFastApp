@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     var findFragment:FindFragment ?= null
     var supriseFragment: SupriseFragment?= null
     var mineFragment: Minefragment?= null
+
+    var beginTransaction:FragmentTransaction ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         initFragments()
         addListeners()
+
+        changeHomePage(ConstObject.HOME_BT_1)
     }
 
     private fun setStatusBar() {
@@ -55,13 +59,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeHomePage(homeBtNum: Int) {
-        var beginTransaction = supportFragmentManager.beginTransaction()
-        hideFragment(beginTransaction)
+        beginTransaction = supportFragmentManager.beginTransaction()
+        hideFragment(beginTransaction!!)
          when(homeBtNum){
-             1 -> showHome(beginTransaction)
-             2 -> showFind(beginTransaction)
-             3 -> showSuprise(beginTransaction)
-             4 -> showMy(beginTransaction)
+             1 -> showHome(beginTransaction!!)
+             2 -> showFind(beginTransaction!!)
+             3 -> showSuprise(beginTransaction!!)
+             4 -> showMy(beginTransaction!!)
          }
     }
 

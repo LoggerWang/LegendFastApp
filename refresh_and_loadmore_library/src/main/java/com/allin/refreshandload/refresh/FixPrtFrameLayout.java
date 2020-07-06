@@ -8,7 +8,7 @@ import android.view.ViewConfiguration;
 /**
  * Description: 修复嵌套引起的事件分发问题
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2017/3/27 09:47
  */
 

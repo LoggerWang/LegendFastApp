@@ -23,7 +23,7 @@ import java.util.ArrayList;
 /**
  * Description:GridView
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/11/29 10:06
  */
 

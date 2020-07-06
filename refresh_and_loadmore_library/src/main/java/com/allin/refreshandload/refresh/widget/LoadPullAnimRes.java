@@ -11,7 +11,7 @@ import com.allin.refreshandload.R;
 /**
  * Description:下拉动画加载类
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/7 18:20
  */
 public class LoadPullAnimRes {

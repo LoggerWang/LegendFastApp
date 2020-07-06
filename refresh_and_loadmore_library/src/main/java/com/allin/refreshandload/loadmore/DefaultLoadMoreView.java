@@ -14,7 +14,7 @@ import com.allin.refreshandload.R;
 /**
  * Description:默认加载更多footer
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 13:57
  */
 public class DefaultLoadMoreView extends RelativeLayout implements ILoadMoreView {

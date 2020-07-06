@@ -18,7 +18,7 @@ import java.lang.reflect.Constructor;
 /**
  * Description:能够加载更多的GridView
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/11/29 10:15
  */
 

@@ -6,7 +6,7 @@ import android.view.View;
 /**
  * Description:加载跟多UI展示
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:06
  */
 public interface ILoadMoreView {

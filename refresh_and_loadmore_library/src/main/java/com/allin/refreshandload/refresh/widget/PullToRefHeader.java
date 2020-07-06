@@ -16,7 +16,7 @@ import com.allin.refreshandload.refresh.indicator.PtrIndicator;
 /**
  * Description:下拉刷新头部
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/3 16:49
  */
 public class PullToRefHeader extends RelativeLayout implements PtrUIHandler {

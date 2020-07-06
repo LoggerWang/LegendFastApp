@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Description:能够加载更多的ScrollView
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:08
  */
 public class ScrollViewFinal extends ScrollView implements OnScrollBottomListener {

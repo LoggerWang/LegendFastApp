@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Description:能够加载更多的NestedScrollView
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:07
  */
 public class NestedScrollViewFinal extends NestedScrollView implements OnScrollBottomListener {

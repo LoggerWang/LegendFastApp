@@ -2,6 +2,7 @@ package com.legend.home
 
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.legend.R
 import com.legend.api.ArticleService
 import com.legend.api.BaseResponse
@@ -21,6 +22,10 @@ import java.lang.reflect.Type
 import java.util.*
 
 class HomeFragment: BaseFragment() {
+
+    var articleAdapter:ArticleAdapter?=null
+
+
     companion object{
         const val TAG = "HomeFragment"
     }
@@ -29,6 +34,16 @@ class HomeFragment: BaseFragment() {
     }
 
     override fun initData() {
+        articleAdapter = ArticleAdapter(context!!, arrayListOf())
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        recyclerview.layoutManager = linearLayoutManager
+
+        recyclerview.adapter = articleAdapter
+        recyclerview.setOnItemClickListener { holder, position ->
+
+        }
          MyRetrofitClient.instance.getInstance(ArticleService::class.java).getArticleList()
              .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -41,13 +56,19 @@ class HomeFragment: BaseFragment() {
                 override fun onFail(msg: String?) {
                 }
             })
+
+
     }
 
     private fun setArticleData(data: ArticleBean?) {
 
+        articleAdapter?.setDatas(data?.datas)
     }
 
     override fun initView(view: View) {
+        getdata.setOnClickListener {
+            initData()
+        }
     }
 
 
@@ -87,7 +108,7 @@ class HomeFragment: BaseFragment() {
         })
     }
 
-    private fun setData(dataList: ArrayList<WangYiNewsEntity>?) {
+    private fun setData(dataList: List<WangYiNewsEntity>?) {
 
     }
 

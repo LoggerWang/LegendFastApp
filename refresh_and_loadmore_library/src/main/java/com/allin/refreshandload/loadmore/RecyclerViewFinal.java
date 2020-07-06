@@ -19,7 +19,7 @@ import java.lang.reflect.Constructor;
 /**
  * Description:能够加载更多的RecyclerView
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:09
  */
 public class RecyclerViewFinal extends RecyclerView implements OnScrollBottomListener {

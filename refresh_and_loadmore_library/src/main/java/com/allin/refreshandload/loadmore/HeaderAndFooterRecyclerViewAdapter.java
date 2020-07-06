@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Description:RecyclerView添加Header/Footer适配器
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:09
  */
 public class HeaderAndFooterRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

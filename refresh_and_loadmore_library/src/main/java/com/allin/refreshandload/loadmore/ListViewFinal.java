@@ -19,7 +19,7 @@ import java.lang.reflect.Constructor;
 /**
  * Description:能够加载更多的listview
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:07
  */
 public class ListViewFinal extends ListView implements OnScrollBottomListener {

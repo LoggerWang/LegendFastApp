@@ -11,6 +11,6 @@ import retrofit2.http.GET
  * @discription
  */
 interface ArticleService {
-    @GET("/article/list/{}/json")
+    @GET("/article/list/0/json")
     fun getArticleList():Observable<BaseDataBean<ArticleBean>>
 }

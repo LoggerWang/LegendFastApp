@@ -3,7 +3,7 @@ package com.allin.refreshandload.loadmore;
 /**
  * Description:加载更多模式
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 2016/4/20 16:05
  */
 public enum LoadMoreMode {

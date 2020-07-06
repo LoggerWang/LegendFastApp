@@ -18,7 +18,7 @@ import com.allin.refreshandload.refresh.indicator.PtrIndicator;
 /**
  * Description:唯医3.0下拉加载header
  *
- * @author: guoyongping
+ * @author: legend
  * @date: 16/8/1 13:54
  */
 
