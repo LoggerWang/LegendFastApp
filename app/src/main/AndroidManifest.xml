@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".find.RoomTestActivity" />
+        <activity android:name=".study.MyButterKnifeJavaActivity" />
     </application>
 
 </manifest>

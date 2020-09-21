@@ -3,6 +3,7 @@ package com.legend.mine
 import android.view.View
 import com.legend.R
 import com.legend.base.BaseFragment
+import com.legend.goButterKnifeJavaActivity
 import kotlinx.android.synthetic.main.fragment_mine.*
 
 class Minefragment: BaseFragment() {
@@ -20,6 +21,11 @@ class Minefragment: BaseFragment() {
         tbInvoke.setOnClickListener {
             invokeTest()
         }
+        tbMyButterKnife.setOnClickListener { goButterKinfeJavaActivity() }
+    }
+
+    private fun goButterKinfeJavaActivity() {
+        goButterKnifeJavaActivity()
     }
 
     private fun invokeTest() {

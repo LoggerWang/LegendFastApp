@@ -15,6 +15,13 @@
         android:gravity="center"
         android:textColor="@color/color_black"
         android:text="mine"/>
+    <Button
+        android:id="@+id/tbMyButterKnife"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:textColor="@color/color_black"
+        android:text="MyButterKnife"/>
 
 
 

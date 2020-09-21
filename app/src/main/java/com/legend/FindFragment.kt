@@ -12,6 +12,12 @@ class FindFragment: BaseFragment() {
     }
 
     override fun initData() {
+    setSex(9)
+
+
+    }
+
+    private fun setSex(@TestAnnotation set:Int){
 
     }
 

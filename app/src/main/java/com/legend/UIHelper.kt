@@ -8,3 +8,11 @@ fun goRoomTestActivity(){
         .withString("name","")
         .navigation()
 }
+
+
+fun goButterKnifeJavaActivity(){
+    ARouter.getInstance()
+        .build(ArouterConst.ACTIVITY_BUTTERKNIFE_JAVA)
+        .withString("name","")
+        .navigation()
+}
