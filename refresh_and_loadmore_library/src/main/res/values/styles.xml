@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 加载更多样式 -->
+    <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/def_loading_progress_bar</item>
+        <item name="android:layout_width">@dimen/dp22</item>
+        <item name="android:layout_height">@dimen/dp22</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+</resources>

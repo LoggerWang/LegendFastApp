@@ -2,18 +2,30 @@ package com.legend.home
 
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.legend.R
+import com.legend.api.ArticleService
+import com.legend.api.BaseResponse
+import com.legend.api.MyRetrofitClient
 import com.legend.base.BaseData
 import com.legend.base.BaseFragment
+import com.legend.entity.ArticleBean
+import com.legend.entity.BaseDataBean
 import com.legend.entity.WangYiNewsEntity
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.reflect.Type
 import java.util.*
 
 class HomeFragment: BaseFragment() {
+
+    var articleAdapter:ArticleAdapter?=null
+
+
     companion object{
         const val TAG = "HomeFragment"
     }
@@ -22,10 +34,41 @@ class HomeFragment: BaseFragment() {
     }
 
     override fun initData() {
+        articleAdapter = ArticleAdapter(context!!, arrayListOf())
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
+        recyclerview.layoutManager = linearLayoutManager
+
+        recyclerview.adapter = articleAdapter
+        recyclerview.setOnItemClickListener { holder, position ->
+
+        }
+         MyRetrofitClient.instance.getInstance(ArticleService::class.java).getArticleList()
+             .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : BaseResponse<ArticleBean>(){
+                override fun onSuccess(data: ArticleBean?) {
+                    println("======="+data.toString())
+                    setArticleData(data)
+                }
+
+                override fun onFail(msg: String?) {
+                }
+            })
+
 
     }
 
+    private fun setArticleData(data: ArticleBean?) {
+
+        articleAdapter?.setDatas(data?.datas)
+    }
+
     override fun initView(view: View) {
+        getdata.setOnClickListener {
+            initData()
+        }
     }
 
 
@@ -33,6 +76,7 @@ class HomeFragment: BaseFragment() {
         var retrofit = Retrofit.Builder()
             .baseUrl("https://api.apiopen.top/")
             .addConverterFactory(GsonConverterFactory.create())
+
             .build()
 
         var apiService = retrofit.create(HomeApiService::class.java)
@@ -64,7 +108,7 @@ class HomeFragment: BaseFragment() {
         })
     }
 
-    private fun setData(dataList: ArrayList<WangYiNewsEntity>?) {
+    private fun setData(dataList: List<WangYiNewsEntity>?) {
 
     }
 
